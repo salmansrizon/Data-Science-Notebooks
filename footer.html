@@ -1,0 +1,1022 @@
+<!-- stylesheets -->
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+<script src="https://kit.fontawesome.com/0ff19582bb.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover user-scalable=no">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+  @media(max-width: 767px) {
+    .mui-zebra-page {
+      background-size: contain !important;
+    }
+  }     
+    .div-img {
+        width: 50% !important;
+    }
+
+    .div-contents {
+        margin-right: auto !important;
+        margin-left: auto !important;
+        margin-top: -7% !important;
+    }
+
+    .lzd-act-richtext a {
+        color: #000 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+    }
+
+    .div-wrap {
+        display: none !important;
+    }
+
+    .lzd-act-richtext img {
+        position: relative !important;
+        top: 0% !important;
+        border-radius: 100% !important;
+        border: 2px solid #e1e1e1 !important;
+        margin-bottom: 3px !important;
+    }
+
+    .div-list-main {
+        padding-left: 18px !important;
+        padding-right: 0 !important;
+        list-style: none !important;
+        margin-left: -15% !important;
+        line-height: 1.5 !important;
+        cursor: pointer !important;
+        font-size: 10px !important;
+        font-family: 'Montserrat', sans-serif !important;
+    }
+
+    .main-listing-img {
+        border-radius: 50px !important;
+        margin-right: 7.5px !important;
+        box-shadow: rgba(0, 0, 0, 0.11) 0px 0.96px 4.8px 0px !important;
+        float: left !important;
+        width: 40px !important;
+    }
+    .sub-listing-img{
+        border-radius: 50px !important;
+        margin-right: 7.5px !important;
+        box-shadow: rgba(0, 0, 0, 0.11) 0px 0.96px 4.8px 0px !important;
+        float: left !important;
+        width: 100% !important;
+    }
+    .list-group-item-action:active {
+        background: #f9f9f9;
+    }
+
+    .list-group-item-action {
+        font-weight: 500;
+    }
+
+    .list-group-item {
+        padding: 2.75rem 1.25rem 2.75rem .5rem !important;
+    }
+
+    #category1 {
+        transition-duration: 2s;
+        transition-delay: 2s;
+        transition-timing-function: linear;
+        -webkit-transition-duration: 2s;
+        -webkit-transition-delay: 2s;
+        -webkit-transition-timing-function:
+    }
+
+    .full-width {
+        width: 100% !important;
+    }
+
+    .cat-hr {
+        border: 0.5px solid #d8d8d8;
+        margin-top: -1rem !important;
+        margin-bottom: 0rem !important;
+    }
+
+    .df-main-div {
+        position: absolute !important;
+    }
+
+    .lzd-act-richtext ol,
+    .lzd-act-richtext ul {
+        padding-left: 18px !important;
+        padding-right: 0 !important;
+    }
+
+    .hr-margin {
+        margin-bottom: 2rem;
+    }
+
+    .lzd-act-richtext h6 {
+        margin: 0 !important;
+        font-weight: 500 !important;
+    }
+
+    @media (min-width: 375px) and (max-width: 1200px) {
+        .div-df {
+            position: fixed !important;
+            left: 0;
+            bottom: -7% !important;
+            width: 100%;
+            background-color: #e1e1e1 !important;
+            color: #000;
+            text-align: center;
+            padding: 2% 0 !important;
+            z-index: 999 !important;
+            margin: -4% 0 !important;
+            height: 135px !important;
+        }
+    }
+
+    .div-df {
+        position: fixed !important;
+        left: 0;
+        bottom: -10.5%;
+        width: 100%;
+        background-color: #e1e1e1;
+        color: #000 !important;
+        text-align: center;
+        padding: 2% 0 !important;
+        z-index: 999 !important;
+        margin: -4% 0 !important;
+        height: 135px !important;
+    }
+    .mxt-60{
+        margin-top: 67px;
+    }
+    .main-cat-img{
+        width: 25%;
+    }
+    #drag{
+        right: 0;
+        top: 8%;
+        
+    }
+    #draggable { 
+  cursor:move;
+  height: 150px;
+  padding: 1em;
+  width: 300px;
+  text-align:center;
+}
+    @media(min-width: 768px) {
+        .desk-no {
+            display: none !important;
+        }
+        #category1, #category2 {
+            display: none !important;
+        }
+    }
+</style>
+<div class="desk-no col-xs-3 drag" id="drag" style="position: absolute;cursor: move;padding: 0 !important;z-index: 99;">
+    <a id="Img" href="https://www.daraz.lk" style="position: fixed;"><img src="https://gw.alicdn.com/tfs/TB13FSWcxn1gK0jSZKPXXXvUXXa-2095-1481.png" style="margin-left: 15% !important;width: 100%;border-radius: 0 !important;border: none !important;"></a>
+</div>
+<div id="category1" style="display: none; position: fixed !important; z-index: 999 !important;background: #f9f9f9 !important; top:0;left:0;height: 100% !important;overflow-y: scroll !important; width: 100% !important;font-family: 'Montserrat', sans-serif !important;">
+    <div class="col-xs-5 list-group" style="height: 100%; overflow: scroll;">
+        <ul class="div-list-main">
+            <li class="main-listing list-group-item list-group-item-action" id="firstlist" onclick="firstCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1pUsQbUz1gK0jSZLeXXb9kVXa-300-300.jpg" style="width: 24px;margin-top: -8%;"><span>Shirts</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="secondlist" onclick="secondCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1uWgRbQP2gK0jSZPxXXacQpXa-300-300.jpg" style="width: 24px;margin-top: -12px;"><span>T-shirts</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="thirdlist" onclick="thirdCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1IGETbQT2gK0jSZFkXXcIQFXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Pants</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="fourthlist" onclick="fourthCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB17bERbNz1gK0jSZSgXXavwpXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Underwears</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="fifthlist" onclick="fifthCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1FbsRbSf2gK0jSZFPXXXsopXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Footwear</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="sixthlist" onclick="sixthCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1fUESbQT2gK0jSZPcXXcKkpXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Accessories & Eyewears</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="seventhlist" onclick="seventhCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1Z3.RbQY2gK0jSZFgXXc5OFXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Watches</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="eightlist" onclick="eightCatOpen()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1dhwTbQH0gK0jSZPiXXavapXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Bags</span></li>
+            <li class="main-listing list-group-item list-group-item-action" style="border-right: 0;border-bottom: 0;border-left: 0;"><span></span></li>
+        </ul>
+    </div>
+
+    <div class="col-xs-7" id="firstcat" style="display: show;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Shirts </span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1RCgTbG61gK0jSZFlXXXDKFXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Formal Shirts </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1vrIRbNz1gK0jSZSgXXavwpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Casual Shirts </h6>
+        </div>
+
+
+    </div>
+
+    <div class="col-xs-7 fixed" id="secondcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">T-shirts</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1WbgQbUY1gK0jSZFMXXaWcVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Under 999 </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1mQoRbUT1gK0jSZFrXXcNCXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Under 1999 </h6>
+        </div>
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1rcQUbHY1gK0jSZTEXXXDQVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Under 2999 </h6>
+        </div>
+    </div>
+
+    <div class="col-xs-7 fixed" id="thirdcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Pants</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1ZZMNbGL7gK0jSZFBXXXZZpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Denims </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1iykRbKH2gK0jSZFEXXcqMpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Trousers </h6>
+        </div>
+
+    </div>
+    <div class="col-xs-7 fixed" id="fourthcat" style="display: none;padding-left: 0px;">
+
+        <div class="#">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Underwears</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1srQRbUH1gK0jSZSyXXXtlpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Trunks & Boxers </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1NKkPbFY7gK0jSZKzXXaikpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Briefs </h6>
+        </div>
+
+    </div>
+    <div class="col-xs-7 fixed" id="fifthcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Footwear</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1C5wTbND1gK0jSZFKXXcJrVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Casual Wear </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1uvEUbHj1gK0jSZFOXXc7GpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Formal Wear </h6>
+        </div>
+
+    </div>
+        <div class="col-xs-7 fixed" id="sixthcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Accessories & Eyewears</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1YyZTbUY1gK0jSZFCXXcwqXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Fashion Accessories</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1PvIUbHY1gK0jSZTEXXXDQVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Eyewears</h6>
+        </div>
+
+    </div>
+        <div class="col-xs-7 fixed" id="seventhcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Watches</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1EAETbHH1gK0jSZFwXXc7aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Watches Under 999</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1bKsRbSf2gK0jSZFPXXXsopXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Watches Under 2999 </h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1Z3.RbQY2gK0jSZFgXXc5OFXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Premium watches </h6>
+        </div>
+
+    </div>
+            <div class="col-xs-7 fixed" id="eightcat" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Bags</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1i_sRbO_1gK0jSZFqXXcpaXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Backpacks </h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1wQETbHH1gK0jSZFwXXc7aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Messenger Bags </h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1KU3SbQL0gK0jSZFxXXXWHVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Wallets </h6>
+        </div>
+
+    </div>
+        <a href="#">
+        <div style="font-family: 'Montserrat', sans-serif !important;position: absolute !important;bottom: 25% !important;left: 42.5% !important;background: #d7d7d7 !important;border-radius: 50px !important;width: 50% !important;">
+        <img class="main-cat-img" src="https://gw.alicdn.com/tfs/TB1OotgbebviK0jSZFNXXaApXXa-100-100.png" style="float: left;border: 2px solid #d7d7d7;border-radius: 50px;">
+        <span style="position: absolute;top: 25%;font-weight: 700 !important;margin-left: 10% !important;font-size: 14px !important;text-transform: uppercase;">Home&nbsp;&nbsp;<i class="fas fa-angle-double-right" style="font-size: 18px !important;position: relative !important;top: 2px !important;"></i></span>
+        </div>
+        </a>
+
+</div>
+
+<div id="category2" style="display: none; position: fixed !important; z-index: 999 !important;background: #f9f9f9 !important; top:0;left:0;height: 100% !important;overflow-y: scroll !important; width: 100% !important;font-family: 'Montserrat', sans-serif !important;">
+
+
+    <div class="col-xs-5 list-group" style="height: 100%; overflow: scroll;">
+        <ul class="div-list-main">
+            <li class="main-listing list-group-item list-group-item-action" id="firstlist2" onclick="firstCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1Yu7PbHj1gK0jSZFOXXc7GpXa-300-300.jpg" style="width: 24px;margin-top: -8%;"><span>Dresses</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="secondlist2" onclick="secondCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB18iEMbNn1gK0jSZKPXXXvUXXa-300-300.jpg" style="width: 24px;margin-top: -12px;"><span>Traditional Clothing</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="thirdlist2" onclick="thirdCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1DvwObUY1gK0jSZFCXXcwqXXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Tops</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="fourthlist2" onclick="fourthcatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1APQMbO_1gK0jSZFqXXcpaXXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Pants</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="fifthlist2" onclick="fifthCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1_acObQT2gK0jSZFkXXcIQFXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Lingerie, Sleep & Lounge</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="sixthlist2" onclick="sixthCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1q8sKbGL7gK0jSZFBXXXZZpXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Footwear</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="seventhlist2" onclick="seventhCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1jV.RbHH1gK0jSZFwXXc7aXXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Accessories</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="eightlist2" onclick="eightCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB1E6.NbKL2gK0jSZPhXXahvXXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Watches</span></li>
+            <li class="main-listing list-group-item list-group-item-action" id="ninthlist2" onclick="ninthCatOpen2()"><img class="main-listing-img" src="https://gw.alicdn.com/tfs/TB12SMMbFT7gK0jSZFpXXaTkpXa-300-300.jpg" style="width: 24px;margin-top: -10px;"><span>Bags</span></li>
+            <li class="main-listing list-group-item list-group-item-action" style="border-right: 0;border-bottom: 0;border-left: 0;"><span></span></li>
+
+        </ul>
+    </div>
+
+    <div class="col-xs-7" id="firstcat2" style="display: show;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Dresses</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1l3UObHH1gK0jSZFwXXc7aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Party Dresses</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1S43JbF67gK0jSZPfXXahhFXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Casual Dresses</h6>
+        </div>
+
+    </div>
+
+    <div class="col-xs-7 fixed" id="secondcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Traditional Clothing</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1MmsLbUT1gK0jSZFhXXaAtVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Sarees</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1yOcJbFT7gK0jSZFpXXaTkpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Kurutis</h6>
+        </div>
+    </div>
+
+    <div class="col-xs-7 fixed" id="thirdcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Tops</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1THENbNv1gK0jSZFFXXb0sXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Formal</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1zMZObHH1gK0jSZFwXXc7aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Casual</h6>
+        </div>
+
+    </div>
+    <div class="col-xs-7 fixed" id="fourthcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Pants</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB11u.PbHj1gK0jSZFOXXc7GpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Denims</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB17qILbFP7gK0jSZFjXXc5aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Pants</h6>
+        </div>
+
+    </div>
+    <div class="col-xs-7 fixed" id="fifthcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Lingerie, Sleep & Lounge</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1HnZObND1gK0jSZFyXXciOVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Panties</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1OJAMbQY2gK0jSZFgXXc5OFXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Bras</h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1NWgNbQL0gK0jSZFAXXcA9pXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Sleep & Loungewear</h6>
+        </div>
+
+    </div>
+    <div class="col-xs-7 fixed" id="sixthcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Footwear</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1pF.RbHH1gK0jSZFwXXc7aXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Flats</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1vTMPbHr1gK0jSZR0XXbP8XXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Heels</h6>
+        </div>
+
+    </div>
+     <div class="col-xs-7 fixed" id="seventhcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Accessories</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1P2EQbKP2gK0jSZFoXXauIVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Accessories Under 999</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1kt.QbQT2gK0jSZPcXXcKkpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Accessories Under 1999</h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1PGsNbG67gK0jSZFHXXa9jVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Accessories Under 2999</h6>
+        </div>
+
+    </div>
+     <div class="col-xs-7 fixed" id="eightcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Watches</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1j3ZObLb2gK0jSZK9XXaEgFXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Watches Under 999</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB17iafbebviK0jSZFNXXaApXXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Premium Watches</h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1ZIESbND1gK0jSZFyXXciOVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Watches Under 2999</h6>
+        </div>
+
+    </div>
+     <div class="col-xs-7 fixed" id="ninthcat2" style="display: none;padding-left: 0px;">
+
+        <div class="">
+            <br>
+            <span class="pull-left" style="font-size: 10px;cursor: pointer;font-weight:600 !important;">Bags</span>
+            <a href="#">
+                            <span class="pull-right" style="font-size: 10px;cursor: pointer;color: #3ec251 !important;font-weight:600;">&gt;&gt; See More</span>
+                        </a>
+        </div>
+
+        <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1z2ZPbUD1gK0jSZFGXXbd3FXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Hand bags</h6>
+        </div>
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1XR7NbG67gK0jSZFHXXa9jVXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"><br></a>
+            <h6 class="text-center mxt-60">Backpacks</h6>
+        </div>
+                <div class="col-xs-12">
+            <hr class="hr-margin">
+        </div>
+
+        <div class="col-xs-6">
+            <a href="#">
+                        <img src="https://gw.alicdn.com/tfs/TB1t3ZLbGL7gK0jSZFBXXXZZpXa-300-300.jpg" class="center-block sub-listing-img" style="object-fit: contain; width: 100%;"></a><br>
+            <h6 class="text-center mxt-60">Wallets</h6>
+        </div>
+
+    </div>
+        <a href="#">
+        <div style="font-family: 'Montserrat', sans-serif !important;position: absolute !important;bottom: 25% !important;left: 42.5% !important;background: #d7d7d7 !important;border-radius: 50px !important;width: 50% !important;">
+        <img class="main-cat-img" src="https://gw.alicdn.com/tfs/TB1n32NbFT7gK0jSZFpXXaTkpXa-100-100.png" style="float: left;border: 2px solid #d7d7d7;border-radius: 50px;">
+        <span style="position: absolute;top: 25%;font-weight: 700 !important;margin-left: 10% !important;font-size: 14px !important;text-transform: uppercase;">Home&nbsp;&nbsp;<i class="fas fa-angle-double-right" style="font-size: 18px !important;top: 2px !important;position: relative !important;"></i></span>
+        </div>
+        </a>
+        </div>
+</div>
+
+<div class="desk-no">
+    <div class="df-main-div">
+        <div class="div-df div-df-sm">
+            <div style="margin-top: -5px !important; margin-bottom: 8px !important;">
+                <div class="col-xs-4 div-contents" style="font-family: 'Montserrat', sans-serif !important;">
+                    <a href="#" style="cursor:pointer !important; font-weight: 600 !important;font-size: 9.6px !important;text-decoration: none !important;color: black;">
+                            <img class="div-img" src="https://gw.alicdn.com/tfs/TB1Wgodb4v1gK0jSZFFXXb0sXXa-208-208.png" style="margin-bottom: 8px;">
+                            <span>Homepage</span>
+                        </a>
+                </div>
+                <div class="col-xs-4 div-contents" onclick="category2()" style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
+                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB1n32NbFT7gK0jSZFpXXaTkpXa-100-100.png" style="margin-bottom: 8px;">
+                            <span style="cursor:pointer; font-weight: 600;font-size: 9.6px;">Women's</span>
+                </div>
+                <div class="col-xs-4 div-contents" onclick="category1()" style="font-family: 'Montserrat', sans-serif !important; cursor: pointer;">
+                    <img class="div-img" src="https://gw.alicdn.com/tfs/TB1OotgbebviK0jSZFNXXaApXXa-100-100.png" style="margin-bottom: 8px;">
+                    <span style="cursor:pointer; font-weight: 600;font-size: 9.6px;">Men's</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- scripts -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+
+    // Make the DIV element draggable:
+dragElement(document.getElementById("drag"));
+
+function dragElement(elmnt) {
+  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  if (document.getElementById(elmnt.id + "dragImg")) {
+    // if present, the header is where you move the DIV from:
+    document.getElementById(elmnt.id + "dragImg").onmousedown = dragMouseDown;
+  } else {
+    // otherwise, move the DIV from anywhere inside the DIV:
+    elmnt.onmousedown = dragMouseDown;
+  }
+
+  function dragMouseDown(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // get the mouse cursor position at startup:
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    document.onmouseup = closeDragElement;
+    // call a function whenever the cursor moves:
+    document.onmousemove = elementDrag;
+  }
+
+  function elementDrag(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // calculate the new cursor position:
+    pos1 = pos3 - e.clientX;
+    pos2 = pos4 - e.clientY;
+    pos3 = e.clientX;
+    pos4 = e.clientY;
+    // set the element's new position:
+    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+  }
+
+  function closeDragElement() {
+    // stop moving when mouse button is released:
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
+    function category1() {
+        var x = document.getElementById("category1");
+        var z = document.getElementById("category2");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+            z.style.display = "none";   
+        } else {
+            x.style.display = "none";
+        }
+    }
+
+    function firstCatOpen() {
+        document.getElementById('firstcat').style.display = "block";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+
+        function secondCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "block";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+
+        function thirdCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "block";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+        function fourthCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "block";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+        function fifthCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "block";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+        function sixthCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "block";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "none";
+    }
+        function seventhCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "block";
+        document.getElementById('eightcat').style.display = "none";
+    }
+        function eightCatOpen() {
+        document.getElementById('firstcat').style.display = "none";
+        document.getElementById('secondcat').style.display = "none";
+        document.getElementById('thirdcat').style.display = "none";
+        document.getElementById('fourthcat').style.display = "none";
+        document.getElementById('fifthcat').style.display = "none";
+        document.getElementById('sixthcat').style.display = "none";
+        document.getElementById('seventhcat').style.display = "none";
+        document.getElementById('eightcat').style.display = "block";
+    }
+
+</script>
+
+<script type="text/javascript">
+    function category2() {
+        var z = document.getElementById("category2");
+        var x = document.getElementById("category1");
+        if (z.style.display === "none") {
+            z.style.display = "block";
+            x.style.display = "none";
+        } else {
+            z.style.display = "none";
+        }
+    }
+
+    function firstCatOpen2() {
+        document.getElementById('firstcat2').style.display = "block";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+
+    }
+
+    function secondCatOpen2() {
+        document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "block";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+
+    function thirdCatOpen2() {
+        document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "block";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function fourthcatOpen2() {
+         document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "block";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function fifthCatOpen2() {
+        document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "block";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function sixthCatOpen2() {
+         document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "block";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function seventhCatOpen2() {
+         document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "block";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function eightCatOpen2() {
+         document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "block";
+        document.getElementById('ninthcat2').style.display = "none";
+    }
+    function ninthCatOpen2() {
+         document.getElementById('firstcat2').style.display = "none";
+        document.getElementById('secondcat2').style.display = "none";
+        document.getElementById('thirdcat2').style.display = "none";
+        document.getElementById('fourthcat2').style.display = "none";
+        document.getElementById('fifthcat2').style.display = "none";
+        document.getElementById('sixthcat2').style.display = "none";
+        document.getElementById('seventhcat2').style.display = "none";
+        document.getElementById('eightcat2').style.display = "none";
+        document.getElementById('ninthcat2').style.display = "block";
+    }
+</script>
