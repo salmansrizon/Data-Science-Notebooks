@@ -1,0 +1,9 @@
+pandas
+numpy
+tqdm
+matplotlib
+seaborn
+folium
+osmnx
+networkx
+ortools
